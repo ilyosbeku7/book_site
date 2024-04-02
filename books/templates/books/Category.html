@@ -1,0 +1,33 @@
+{% extends 'landing_page.html' %}
+{% load static %}
+{% block content %}
+
+
+
+
+  
+<section style="background-color: #8e2a09; margin: 10px 10px 10px 10px;">
+  <div class="container py-5">
+  {% for book in books %}
+  
+    
+   
+  <div class="col-lg-2 col-md-6 mb-4">
+    <div class="col">
+      <div style="height: 320px; width: 110%; "  class="card">
+        <img src="{{book.image.url}}" style="width: 100%; height: 120px;" class="card-img-top" alt="...">
+        <div class="card-body">
+        <h3 class="card-title">{{book.name}}</h3> <br>
+        <h2   class="fw-bold">{{book.cat}}</h2><br>
+        <h2><a href="{% url 'books:about_page' book.id%}" class="btn btn-warning">Read more..</a></h2>
+        </div>
+      </div>
+      </div>
+      
+    </div>
+  {% endfor %}
+  </div>
+  </section>
+ 
+ 
+{% endblock  %}

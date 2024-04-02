@@ -1,0 +1,45 @@
+{% extends 'landing_page.html'%}
+
+{% block content %}
+<div class="container mb-3">
+  <div class="view-account">
+      <section class="module">
+          <div class="module-inner">
+              <div class="side-bar">
+                  
+             
+              </div>
+              <div class="content-panel">
+                  <h2 class="title">Profile<span class="pro-label label label-warning">PRO</span></h2>
+                  <form class="form-horizontal" action="", method="post"  enctype="multipart/form-data">
+                      <fieldset class="fieldset">
+                          <h3 class="fieldset-title">Personal Info</h3>
+                          <div class="form-group avatar">
+                              <figure class="figure col-md-2 col-sm-3 col-xs-12">
+                                  <img class="img-rounded img-responsive" src="{{user.photo.url}}" alt="">
+                              </figure>
+                              
+                          </div>
+                          <ul class="list-group list-group-flush"></ul>
+                            <form action="", method="post"  enctype="multipart/form-data">
+                            {% csrf_token %}
+                    
+                            {{form.as_p}}
+                    
+                            <button style="width: 100%;" type="submit" class="w-90 btn btn-secondary"><h5>Save</h5></button>
+                            
+                            </form>
+                      </fieldset>
+                      
+                      
+                     
+                  </form>
+              </div>
+          </div>
+      </section>
+  </div>
+</div>
+
+
+
+{% endblock %}
