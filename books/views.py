@@ -12,7 +12,7 @@ class BooksView(View):
         reversed_comments = comment[::-1]  
         last_4_comments = reversed_comments[:4]
         categories=Category.objects.all()
-        books=Book.objects.all()
+        books=Book.objects.all().order_by('name')
         search_query=request.GET.get('q', "")
         
         if search_query:
